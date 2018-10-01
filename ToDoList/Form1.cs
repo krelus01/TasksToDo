@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Globalization;
 
 
 namespace ToDoList
@@ -114,7 +113,7 @@ namespace ToDoList
             }
         }
 
-        void AlarmFunction ()
+        void AlarmFunction () //Funkcja uruchamiana w tle, odpowiedzialna za wyświetlanie powiadomień o zbliżających się zadaniach
         {
             string oneHourFromNow;
             List<TaskInformation> tasksToCheck;
@@ -273,7 +272,7 @@ namespace ToDoList
             }
         }
 
-        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e) //Nakłada kolorki po załadowaniu danych
         {
             SetUrgencyColors();
         }

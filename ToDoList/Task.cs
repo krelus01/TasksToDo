@@ -19,7 +19,6 @@ namespace ToDoList
         public string Additional_info { get; set; }
 
         public int User_id { get; set; }
-        //public virtual User User { get; set; }
 
         public Task() { }
 
