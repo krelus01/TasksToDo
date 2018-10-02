@@ -28,45 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.RemoveTaskBtn = new System.Windows.Forms.Button();
+            this.EditTaskBtn = new System.Windows.Forms.Button();
+            this.AdditInfoRichtextbox = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TaskNameTextbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.HourPicker = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
-            // button2
+            // RemoveTaskBtn
             // 
-            this.button2.Location = new System.Drawing.Point(118, 237);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Usuń";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.RemoveTaskBtn.Location = new System.Drawing.Point(118, 237);
+            this.RemoveTaskBtn.Name = "RemoveTaskBtn";
+            this.RemoveTaskBtn.Size = new System.Drawing.Size(75, 23);
+            this.RemoveTaskBtn.TabIndex = 5;
+            this.RemoveTaskBtn.Text = "Usuń";
+            this.RemoveTaskBtn.UseVisualStyleBackColor = true;
+            this.RemoveTaskBtn.Click += new System.EventHandler(this.RemoveTaskBtn_Click);
             // 
-            // button1
+            // EditTaskBtn
             // 
-            this.button1.Location = new System.Drawing.Point(199, 237);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Edytuj";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.EditTaskBtn.Location = new System.Drawing.Point(199, 237);
+            this.EditTaskBtn.Name = "EditTaskBtn";
+            this.EditTaskBtn.Size = new System.Drawing.Size(75, 23);
+            this.EditTaskBtn.TabIndex = 4;
+            this.EditTaskBtn.Text = "Edytuj";
+            this.EditTaskBtn.UseVisualStyleBackColor = true;
+            this.EditTaskBtn.Click += new System.EventHandler(this.EditTaskBtn_Click);
             // 
-            // richTextBox1
+            // AdditInfoRichtextbox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 139);
-            this.richTextBox1.MaxLength = 800;
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(262, 92);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
+            this.AdditInfoRichtextbox.Location = new System.Drawing.Point(12, 139);
+            this.AdditInfoRichtextbox.MaxLength = 800;
+            this.AdditInfoRichtextbox.Name = "AdditInfoRichtextbox";
+            this.AdditInfoRichtextbox.Size = new System.Drawing.Size(262, 92);
+            this.AdditInfoRichtextbox.TabIndex = 3;
+            this.AdditInfoRichtextbox.Text = "";
             // 
             // label3
             // 
@@ -78,13 +78,13 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Dodatkowe informacje:";
             // 
-            // textBox1
+            // TaskNameTextbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 88);
-            this.textBox1.MaxLength = 30;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(262, 20);
-            this.textBox1.TabIndex = 2;
+            this.TaskNameTextbox.Location = new System.Drawing.Point(12, 88);
+            this.TaskNameTextbox.MaxLength = 30;
+            this.TaskNameTextbox.Name = "TaskNameTextbox";
+            this.TaskNameTextbox.Size = new System.Drawing.Size(262, 20);
+            this.TaskNameTextbox.TabIndex = 2;
             // 
             // label2
             // 
@@ -96,10 +96,10 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Nazwa zadania:";
             // 
-            // comboBox1
+            // HourPicker
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.HourPicker.FormattingEnabled = true;
+            this.HourPicker.Items.AddRange(new object[] {
             "00:00",
             "01:00",
             "02:00",
@@ -124,10 +124,10 @@
             "21:00",
             "22:00",
             "23:00"});
-            this.comboBox1.Location = new System.Drawing.Point(218, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(56, 21);
-            this.comboBox1.TabIndex = 1;
+            this.HourPicker.Location = new System.Drawing.Point(218, 36);
+            this.HourPicker.Name = "HourPicker";
+            this.HourPicker.Size = new System.Drawing.Size(56, 21);
+            this.HourPicker.TabIndex = 1;
             // 
             // label1
             // 
@@ -151,13 +151,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 267);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.RemoveTaskBtn);
+            this.Controls.Add(this.EditTaskBtn);
+            this.Controls.Add(this.AdditInfoRichtextbox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TaskNameTextbox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.HourPicker);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "ZadaniaEdytujUsun";
@@ -172,13 +172,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button RemoveTaskBtn;
+        private System.Windows.Forms.Button EditTaskBtn;
+        private System.Windows.Forms.RichTextBox AdditInfoRichtextbox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TaskNameTextbox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox HourPicker;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }

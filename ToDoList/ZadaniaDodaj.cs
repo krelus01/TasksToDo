@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace ToDoList
 {
@@ -20,21 +14,21 @@ namespace ToDoList
         {
             InitializeComponent();
             _activeUser = user;
-            comboBox1.Text = "00:00";
+            HourPicker.Text = "00:00";
         }
 
-        private void button2_Click(object sender, EventArgs e) //Wyczyść
+        private void ClearTextBtn_Click(object sender, EventArgs e) //Wyczyść
         {
-            textBox1.Text = "";
-            richTextBox1.Text = "";
-            comboBox1.Text = "00:00";
+            TaskNameTextbox.Text = "";
+            AdditInfoRichtextbox.Text = "";
+            HourPicker.Text = "00:00";
         }
 
-        private void button1_Click(object sender, EventArgs e) //Dodaj
+        private void AddTaskBtn_Click(object sender, EventArgs e) //Dodaj
         {
-            if (textBox1.Text == "" || comboBox1.Text == "")
+            if (TaskNameTextbox.Text == "" || HourPicker.Text == "")
                 MessageBox.Show("Nazwa i/lub godzina nie uzupełniona!", "Błąd!");
-            else if (!Regex.IsMatch(comboBox1.Text, "[0-9][0-9]:[0-9][0-9]"))
+            else if (!Regex.IsMatch(HourPicker.Text, "[0-9][0-9]:[0-9][0-9]"))
                 MessageBox.Show("Godzina zadania jest niepoprawna!", "Błąd!");
             else
             {
@@ -43,7 +37,7 @@ namespace ToDoList
                     Task t;
                     context.Users.Single
                         (a => a.User_id == _activeUser).User_tasks.Add
-                        ((t = new Task(_activeUser, textBox1.Text, dateTimePicker1.Value.ToShortDateString(), comboBox1.Text, richTextBox1.Text)));
+                        ((t = new Task(_activeUser, TaskNameTextbox.Text, dateTimePicker1.Value.ToShortDateString(), HourPicker.Text, AdditInfoRichtextbox.Text)));
                     context.SaveChanges();
                 }
                 this.returnDate = dateTimePicker1.Value.ToShortDateString();

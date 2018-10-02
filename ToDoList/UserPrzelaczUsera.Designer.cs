@@ -30,11 +30,11 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SelectUserBtn = new System.Windows.Forms.Button();
+            this.DGV_UserList = new System.Windows.Forms.DataGridView();
+            this.RemoveUserBtn = new System.Windows.Forms.Button();
+            this.AddUserBtn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_UserList)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -47,75 +47,75 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Wybierz użytkownika:";
             // 
-            // button1
+            // SelectUserBtn
             // 
-            this.button1.Location = new System.Drawing.Point(159, 281);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Wybierz";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.SelectUserBtn.Location = new System.Drawing.Point(159, 281);
+            this.SelectUserBtn.Name = "SelectUserBtn";
+            this.SelectUserBtn.Size = new System.Drawing.Size(70, 23);
+            this.SelectUserBtn.TabIndex = 2;
+            this.SelectUserBtn.Text = "Wybierz";
+            this.SelectUserBtn.UseVisualStyleBackColor = true;
+            this.SelectUserBtn.Click += new System.EventHandler(this.SelectUserBtn_Click);
             // 
-            // dataGridView1
+            // DGV_UserList
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DGV_UserList.AllowUserToAddRows = false;
+            this.DGV_UserList.AllowUserToDeleteRows = false;
+            this.DGV_UserList.AllowUserToResizeColumns = false;
+            this.DGV_UserList.AllowUserToResizeRows = false;
+            this.DGV_UserList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 38);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
+            this.DGV_UserList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV_UserList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DGV_UserList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_UserList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.DGV_UserList.Location = new System.Drawing.Point(12, 38);
+            this.DGV_UserList.MultiSelect = false;
+            this.DGV_UserList.Name = "DGV_UserList";
+            this.DGV_UserList.ReadOnly = true;
+            this.DGV_UserList.RowHeadersVisible = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Size = new System.Drawing.Size(208, 237);
-            this.dataGridView1.TabIndex = 1;
+            this.DGV_UserList.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGV_UserList.Size = new System.Drawing.Size(208, 237);
+            this.DGV_UserList.TabIndex = 1;
             // 
-            // button2
+            // RemoveUserBtn
             // 
-            this.button2.Location = new System.Drawing.Point(83, 281);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Usuń";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.RemoveUserBtn.Location = new System.Drawing.Point(83, 281);
+            this.RemoveUserBtn.Name = "RemoveUserBtn";
+            this.RemoveUserBtn.Size = new System.Drawing.Size(70, 23);
+            this.RemoveUserBtn.TabIndex = 3;
+            this.RemoveUserBtn.Text = "Usuń";
+            this.RemoveUserBtn.UseVisualStyleBackColor = true;
+            this.RemoveUserBtn.Click += new System.EventHandler(this.RemoveUserBtn_Click);
             // 
-            // button3
+            // AddUserBtn
             // 
-            this.button3.Location = new System.Drawing.Point(7, 281);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(70, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Dodaj";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.AddUserBtn.Location = new System.Drawing.Point(7, 281);
+            this.AddUserBtn.Name = "AddUserBtn";
+            this.AddUserBtn.Size = new System.Drawing.Size(70, 23);
+            this.AddUserBtn.TabIndex = 4;
+            this.AddUserBtn.Text = "Dodaj";
+            this.AddUserBtn.UseVisualStyleBackColor = true;
+            this.AddUserBtn.Click += new System.EventHandler(this.AddUserBtn_Click);
             // 
             // UserPrzelaczUsera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(232, 312);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.AddUserBtn);
+            this.Controls.Add(this.RemoveUserBtn);
+            this.Controls.Add(this.DGV_UserList);
+            this.Controls.Add(this.SelectUserBtn);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "UserPrzelaczUsera";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Wybór użytkownika";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_UserList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,9 +123,9 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button SelectUserBtn;
+        private System.Windows.Forms.DataGridView DGV_UserList;
+        private System.Windows.Forms.Button RemoveUserBtn;
+        private System.Windows.Forms.Button AddUserBtn;
     }
 }

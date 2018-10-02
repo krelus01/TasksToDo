@@ -28,41 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ClearTextBtn = new System.Windows.Forms.Button();
+            this.AddUserBtn = new System.Windows.Forms.Button();
+            this.UserNameTextbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.EmailTextbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button2
+            // ClearTextBtn
             // 
-            this.button2.Location = new System.Drawing.Point(118, 236);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Wyczyść";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.ClearTextBtn.Location = new System.Drawing.Point(118, 236);
+            this.ClearTextBtn.Name = "ClearTextBtn";
+            this.ClearTextBtn.Size = new System.Drawing.Size(75, 23);
+            this.ClearTextBtn.TabIndex = 4;
+            this.ClearTextBtn.Text = "Wyczyść";
+            this.ClearTextBtn.UseVisualStyleBackColor = true;
+            this.ClearTextBtn.Click += new System.EventHandler(this.ClearTextBtn_Click);
             // 
-            // button1
+            // AddUserBtn
             // 
-            this.button1.Location = new System.Drawing.Point(199, 236);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Dodaj";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.AddUserBtn.Location = new System.Drawing.Point(199, 236);
+            this.AddUserBtn.Name = "AddUserBtn";
+            this.AddUserBtn.Size = new System.Drawing.Size(75, 23);
+            this.AddUserBtn.TabIndex = 3;
+            this.AddUserBtn.Text = "Dodaj";
+            this.AddUserBtn.UseVisualStyleBackColor = true;
+            this.AddUserBtn.Click += new System.EventHandler(this.AddUserBtn_Click);
             // 
-            // textBox1
+            // UserNameTextbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 36);
-            this.textBox1.MaxLength = 22;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(262, 20);
-            this.textBox1.TabIndex = 1;
+            this.UserNameTextbox.Location = new System.Drawing.Point(12, 36);
+            this.UserNameTextbox.MaxLength = 22;
+            this.UserNameTextbox.Name = "UserNameTextbox";
+            this.UserNameTextbox.Size = new System.Drawing.Size(262, 20);
+            this.UserNameTextbox.TabIndex = 1;
             // 
             // label2
             // 
@@ -84,23 +84,23 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Nazwa użytkownika:";
             // 
-            // textBox2
+            // EmailTextbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 116);
-            this.textBox2.MaxLength = 40;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(262, 20);
-            this.textBox2.TabIndex = 2;
+            this.EmailTextbox.Location = new System.Drawing.Point(12, 116);
+            this.EmailTextbox.MaxLength = 40;
+            this.EmailTextbox.Name = "EmailTextbox";
+            this.EmailTextbox.Size = new System.Drawing.Size(262, 20);
+            this.EmailTextbox.TabIndex = 2;
             // 
             // UserDodaj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 267);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.EmailTextbox);
+            this.Controls.Add(this.ClearTextBtn);
+            this.Controls.Add(this.AddUserBtn);
+            this.Controls.Add(this.UserNameTextbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -116,11 +116,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button ClearTextBtn;
+        private System.Windows.Forms.Button AddUserBtn;
+        private System.Windows.Forms.TextBox UserNameTextbox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox EmailTextbox;
     }
 }

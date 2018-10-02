@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ToDoList
@@ -24,11 +19,11 @@ namespace ToDoList
 
         void LoadData ()
         {
-            dataGridView1.DataSource = UDS.GetAll();
-            dataGridView1.Columns[0].HeaderText = "Nazwa";
-            dataGridView1.Columns[1].HeaderText = "Email";
-            dataGridView1.Columns[2].Visible = false;
-            if (dataGridView1.Rows.Count == 0)
+            DGV_UserList.DataSource = UDS.GetAll();
+            DGV_UserList.Columns[0].HeaderText = "Nazwa";
+            DGV_UserList.Columns[1].HeaderText = "Email";
+            DGV_UserList.Columns[2].Visible = false;
+            if (DGV_UserList.Rows.Count == 0)
             {
                 this.ControlBox = false;
                 closedWithoutUsers = true;
@@ -36,27 +31,27 @@ namespace ToDoList
             }
         }
 
-        private void button1_Click(object sender, EventArgs e) //Wybierz
+        private void SelectUserBtn_Click(object sender, EventArgs e) //Wybierz
         {
-            if (dataGridView1.Rows.Count != 0)
+            if (DGV_UserList.Rows.Count != 0)
             {
-                u = UDS.GetbyID((int)dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value);
+                u = UDS.GetbyID((int)DGV_UserList.Rows[DGV_UserList.CurrentCell.RowIndex].Cells[2].Value);
                 closedWithoutUsers = false;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
         }
 
-        private void button2_Click(object sender, EventArgs e) //Usuń
+        private void RemoveUserBtn_Click(object sender, EventArgs e) //Usuń
         {
-            if (dataGridView1.Rows.Count != 0)
+            if (DGV_UserList.Rows.Count != 0)
             {
                 DialogResult res = MessageBox.Show("Jesteś pewny?", "Potwierdzenie", MessageBoxButtons.YesNo);
                 if (res == DialogResult.Yes)
                 {
                     using (var context = new TaskContext())
                     {
-                        int user_id = (int)dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value;
+                        int user_id = (int)DGV_UserList.Rows[DGV_UserList.CurrentCell.RowIndex].Cells[2].Value;
                         var user = context.Users.Single
                             (a => a.User_id == user_id);
                         var userTasks = from t in context.Tasks
@@ -72,8 +67,8 @@ namespace ToDoList
                         context.Users.Remove(user);
                         context.SaveChanges();
                     }
-                    dataGridView1.DataSource = UDS.GetAll();
-                    if (dataGridView1.Rows.Count == 0)
+                    DGV_UserList.DataSource = UDS.GetAll();
+                    if (DGV_UserList.Rows.Count == 0)
                     {
                         this.ControlBox = false;
                         closedWithoutUsers = true;
@@ -83,7 +78,7 @@ namespace ToDoList
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void AddUserBtn_Click(object sender, EventArgs e)
         {
             using (var dodaj = new UserDodaj())
             {
@@ -92,7 +87,7 @@ namespace ToDoList
                 {
                     LoadData();
                 }
-                if (dataGridView1.Rows.Count != 0)
+                if (DGV_UserList.Rows.Count != 0)
                     this.ControlBox = true;
             }
         }
