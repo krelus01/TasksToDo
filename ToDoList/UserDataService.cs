@@ -9,7 +9,7 @@ namespace ToDoList
 
         public UserDataService() { }
 
-        public List<UserInformation> GetAll () //Funkcja zwraca wszystkich userów
+        public List<UserInformation> GetAll() //Funkcja zwraca wszystkich userów
         {
             List<UserInformation> result = new List<UserInformation>();
             using (context = new TaskContext())
@@ -25,7 +25,7 @@ namespace ToDoList
             return result;
         }
 
-        public User GetbyID (int id) //Funkcja zwraca obiekt user z bazy po ID
+        public User GetbyID(int id) //Funkcja zwraca obiekt user z bazy po ID
         {
             using (context = new TaskContext())
             {

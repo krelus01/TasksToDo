@@ -52,12 +52,12 @@ namespace ToDoList
             {
                 using (var context = new TaskContext())
                 {
-                var task = context.Tasks.Single(a => a.Task_id == t.Task_id);
-                task.Date_day = dateTimePicker1.Value.ToShortDateString();
-                task.Date_hour = HourPicker.Text;
-                task.Task_name = TaskNameTextbox.Text;
-                task.Additional_info = AdditInfoRichtextbox.Text;
-                context.SaveChanges();
+                    var task = context.Tasks.Single(a => a.Task_id == t.Task_id);
+                    task.Date_day = dateTimePicker1.Value.ToShortDateString();
+                    task.Date_hour = HourPicker.Text;
+                    task.Task_name = TaskNameTextbox.Text;
+                    task.Additional_info = AdditInfoRichtextbox.Text;
+                    context.SaveChanges();
                 }
                 this.returnDate = dateTimePicker1.Value.ToShortDateString();
                 this.DialogResult = DialogResult.OK;

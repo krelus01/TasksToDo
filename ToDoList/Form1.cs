@@ -21,6 +21,25 @@ namespace ToDoList
             this.MinimumSize = new Size(464, 300);
             _TaskDataService = new TaskDataService();
 
+            UsersCheckForInitialize();
+
+            if (switchUserResult == DialogResult.Cancel)
+            {
+                Load += (s, e) => Close();
+                return;
+            }
+            else
+            {
+                LoadTasks(0);
+                SetDGVColumns();
+            }
+
+            System.Threading.Tasks.Task task = new System.Threading.Tasks.Task(new Action(AlarmFunction));
+            task.Start();
+        }
+
+        private void UsersCheckForInitialize()
+        {
             using (context = new TaskContext())
             {
                 var users = from u in context.Users
@@ -34,26 +53,18 @@ namespace ToDoList
                 else
                     SwitchUser();
             }
-            if (switchUserResult == DialogResult.Cancel)
-            {
-                Load += (s, e) => Close();
-                return;
-            }
-            else
-            {
-                LoadTasks(0);
-                DGV_TasksList.Columns[0].HeaderText = "Nazwa";
-                DGV_TasksList.Columns[1].HeaderText = "Data";
-                DGV_TasksList.Columns[2].HeaderText = "Godzina";
-                DGV_TasksList.Columns[3].Visible = false;
-                DGV_TasksList.Columns[4].Visible = false;
-            }
-
-            System.Threading.Tasks.Task task = new System.Threading.Tasks.Task(new Action(AlarmFunction));
-            task.Start();
         }
 
-        void AddUser ()
+        private void SetDGVColumns()
+        {
+            DGV_TasksList.Columns[0].HeaderText = "Nazwa";
+            DGV_TasksList.Columns[1].HeaderText = "Data";
+            DGV_TasksList.Columns[2].HeaderText = "Godzina";
+            DGV_TasksList.Columns[3].Visible = false;
+            DGV_TasksList.Columns[4].Visible = false;
+        }
+
+        void AddUser()
         {
             using (var dodaj = new UserDodaj())
             {
@@ -67,7 +78,7 @@ namespace ToDoList
             }
         }
 
-        void SwitchUser () //Przełącza między użytkownikami
+        void SwitchUser() //Przełącza między użytkownikami
         {
             using (var przelacz = new UserPrzelaczUsera())
             {
@@ -85,18 +96,18 @@ namespace ToDoList
             }
         }
 
-        void SetActiveName ()
+        void SetActiveName()
         {
             label2.Location = new Point(351, 4);
             int labelLenght = activeUser.User_name.Count();
             label2.Text = activeUser.User_name.ToLower(); //Ustawia nazwę aktywnego użytkownika
             if (labelLenght > 12)
             {
-                label2.Left -= (labelLenght*4);
+                label2.Left -= (labelLenght * 4);
             }
         }
 
-        void SetUrgencyColors () //Ustawia kolorki
+        void SetUrgencyColors() //Ustawia kolorki
         {
             foreach (DataGridViewRow row in DGV_TasksList.Rows)
             {
@@ -110,7 +121,7 @@ namespace ToDoList
             }
         }
 
-        void AlarmFunction () //Funkcja uruchamiana w tle, odpowiedzialna za wyświetlanie powiadomień o zbliżających się zadaniach
+        void AlarmFunction() //Funkcja uruchamiana w tle, odpowiedzialna za wyświetlanie powiadomień o zbliżających się zadaniach
         {
             string oneHourFromNow;
             List<TaskInformation> tasksToCheck;
@@ -135,7 +146,7 @@ namespace ToDoList
         /// Ładuje dane na podstawie flagi: 0-wszystkie 1-filtr na nazwę, 2-filtr na datę
         /// </summary>
         /// <param name="flag"></param>
-        void LoadTasks (int flag, string data = "")
+        void LoadTasks(int flag, string data = "")
         {
             switch (flag)
             {
@@ -160,13 +171,13 @@ namespace ToDoList
         private void dateTimePicker1_Leave(object sender, EventArgs e) //Wybór daty po odkliknięciu elementu
         {
             DGV_TasksList.DataSource = _TaskDataService.GetByDate(dateTimePicker1.Value.ToShortDateString(), activeUser.User_id);
-        } 
+        }
 
         private void dateTimePicker1_KeyPress(object sender, KeyPressEventArgs e) //Wybór daty po kliknięciu enter
         {
             if (e.KeyChar == (char)13)
                 DGV_TasksList.DataSource = _TaskDataService.GetByDate(dateTimePicker1.Value.ToShortDateString(), activeUser.User_id);
-        } 
+        }
 
         private void dodajToolStripMenuItem_Click(object sender, EventArgs e) //Zadania->Dodaj
         {

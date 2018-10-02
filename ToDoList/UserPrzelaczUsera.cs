@@ -17,7 +17,7 @@ namespace ToDoList
             LoadData();
         }
 
-        void LoadData ()
+        void LoadData()
         {
             DGV_UserList.DataSource = UDS.GetAll();
             DGV_UserList.Columns[0].HeaderText = "Nazwa";
